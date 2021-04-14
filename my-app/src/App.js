@@ -8,7 +8,8 @@ export class App extends Component {
 
   handleSubmit(){
 
-    axios.get('http://localhost:5000/dishes')
+    axios.get('db.json')
+    // axios.get('http://localhost:5000/dishes')
     // axios.get('https://hxj1tck8l1.execute-api.us-east-1.amazonaws.com/default/users/taken?username='+values)
     .then(function (response) {
       // handle success
@@ -35,15 +36,7 @@ export class App extends Component {
           }
       }
 
-  
-
-      
       for(var obj of response.data){
-      //   // address: "1873 Fox Street"
-      //   // id: "03552"
-      //   // name: null
-      //   // zip: "11780"
-        
         if( ((obj.zip === undefined) && (obj.zip == null) && (obj.zip == ""))   || ((obj.name === undefined) && (obj.name == null) && (obj.name == null)) || ((obj.address === undefined) && (obj.address == null) && (obj.address == null))    ){
           console.log(obj.id);
         }        
