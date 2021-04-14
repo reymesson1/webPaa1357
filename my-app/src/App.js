@@ -9,11 +9,8 @@ export class App extends Component {
   handleSubmit(){
 
     axios.get('db.json')
-    // axios.get('http://localhost:5000/dishes')
-    // axios.get('https://hxj1tck8l1.execute-api.us-east-1.amazonaws.com/default/users/taken?username='+values)
     .then(function (response) {
       // handle success
-
       var strArray = [];
       for(var obj of response.data){
         strArray.push(obj.id);
